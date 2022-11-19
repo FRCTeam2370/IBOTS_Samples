@@ -3,7 +3,9 @@
 /build
 # Log file
 *.log
-
+/.*
+/bin
+/gradle
 # BlueJ files
 *.ctxt
 
