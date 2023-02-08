@@ -6,6 +6,7 @@ import frc.robot.commands.Shoulder.Move_Shoulder_Back;
 import frc.robot.commands.Shoulder.Move_Shoulder_Forward;
 import frc.robot.commands.Shoulder.Reset_Shoulder_Encoder;
 import frc.robot.commands.Shoulder.Shoulder_Manual_Control;
+import frc.robot.commands.Shoulder.Shoulder_default_command;
 import frc.robot.subsystems.sub_Elbow;
 import frc.robot.subsystems.sub_Shoulder;
 
@@ -36,11 +37,14 @@ public class RobotContainer {
     m_Shoulder.setDefaultCommand(new Shoulder_Manual_Control(m_Shoulder));
     m_Elbow.setDefaultCommand(new Elbow_Manual_Control(m_Elbow));
 
-    X.whenPressed(new Move_Shoulder_Back(m_Shoulder));
-    A.whenPressed(new Shoulder_Manual_Control(m_Shoulder));
-    B.whenPressed(new Move_Shoulder_Forward(m_Shoulder));
-    Start.whenPressed(new Reset_Shoulder_Encoder(m_Shoulder));
-
+    A.onTrue(new Shoulder_Manual_Control(m_Shoulder));
+    //X.whenPressed(new Move_Shoulder_Back(m_Shoulder));
+    X.onTrue(new Move_Shoulder_Back(m_Shoulder));
+    B.onTrue(new Move_Shoulder_Forward(m_Shoulder));
+    //A.whenPressed(new Shoulder_Manual_Control(m_Shoulder));
+    //B.whenPressed(new Move_Shoulder_Forward(m_Shoulder));
+    //Start.whenPressed(new Reset_Shoulder_Encoder(m_Shoulder));
+    Start.onTrue(new Reset_Shoulder_Encoder(m_Shoulder));
 
 
   }

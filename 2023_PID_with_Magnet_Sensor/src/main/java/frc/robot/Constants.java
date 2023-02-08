@@ -21,8 +21,10 @@ public final class Constants {
     public static final class ShoulderConstants{
         public static final int ShoulderMotorID = 10;
         public static final double ShoulderMotorMaxOutput = 1.0;
-        public static final int ShoulderForwardPosition = 20000;
-        public static final int ShoulderBackPosition = -20000;
+        public static final int ShoulderForwardPosition = 25000;
+        public static final int ShoulderBackPosition = 0;
+        //public static final int ShoulderForwardPosition = 310;
+        //public static final int ShoulderBackPosition = 280;
         public static final int Magnetic_Sensor_Pin = 0;
         public static final int Shoulder_Locked_Pos = 0;
     }

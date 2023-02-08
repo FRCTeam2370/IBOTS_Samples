@@ -14,11 +14,11 @@ public class Move_Shoulder_Back extends CommandBase {
 
   @Override
   public void initialize() {
+    sub_Shoulder.Set_Shoulder_Motor_Up();
   }
 
   @Override
   public void execute() {
-    sub_Shoulder.Send_Shoulder_PID_Variables();
     sub_Shoulder.Shoulder_motor.set(ControlMode.Position, Constants.ShoulderConstants.ShoulderBackPosition);
   }
 
